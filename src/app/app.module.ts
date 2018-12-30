@@ -5,25 +5,32 @@ import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { UnitsComponent } from './units/units.component';
-import { RegistarationComponent } from './registration/registaration.component';
+import { RegistrationComponent } from './registration/registration.component';
+import {AuthService} from './share/auth/auth.service';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticationComponent,
     UnitsComponent,
-    RegistarationComponent
+    RegistrationComponent
   ],
   imports: [
+    FormsModule,
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot([
       {path: 'authentication', component: AuthenticationComponent},
       {path: 'units', component: UnitsComponent},
-      {path: 'registration', component: RegistarationComponent},
+      {path: 'registration', component: RegistrationComponent},
       {path: '', redirectTo: 'authentication', pathMatch: 'full' }
     ])
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../share/auth/auth.service';
+import {Router} from '@angular/router';
+import {AuthModel} from '../share/auth/auth.model';
 
 @Component({
   selector: 'app-authentication',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthenticationComponent implements OnInit {
 
-  constructor() { }
+  authentication: AuthModel;
+
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
+      this.authentication = new AuthModel();
+  }
+
+  onAuth() {
+    this.authService.authRequest(this.authentication)
+      .subscribe(data => console.log(data));
   }
 
 }
