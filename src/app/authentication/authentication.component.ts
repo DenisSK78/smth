@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../share/auth/auth.service';
 import {Router} from '@angular/router';
-import {AuthModel} from '../share/auth/auth.model';
 import {JwtModel} from '../share/jwt/jwt.model';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
