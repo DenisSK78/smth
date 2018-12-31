@@ -9,6 +9,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import {AuthService} from './share/auth/auth.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {FormsModule} from '@angular/forms';
     RegistrationComponent
   ],
   imports: [
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     BrowserModule,

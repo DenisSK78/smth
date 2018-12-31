@@ -1,21 +1,29 @@
 <div class="container">
-  <form #values="ngForm" (ngSubmit)="values">
+  <form [formGroup]="form"  (submit)="onSubmit()">
     <div class="form">
 
       <div class="row">
-        <label>Email:</label>
-        <input [(ngModel)]="authentication.username" type="text" class="form-control" name="email"/>
+        <label for="userName">Email:</label>
+        <input formControlName="username" type="text" class="form-control" id="username"/>
+        <div class="error" *ngIf="isControlInvalid('username')"></div>
       </div>
 
       <div class="row">
-        <label>Password:</label>
-        <input [(ngModel)]="authentication.password" type="text" class="form-control" name="password"/>
+        <label for="password">Password:</label>
+        <input formControlName="password" type="text" class="form-control" id="password"/>
+        <div class="error" *ngIf="isControlInvalid('password')"></div>
       </div>
 
       <div class="row">
-        <button (click)="onAuth()" class="btn btn-primary" >Войти</button>
+        <button type="submit" class="btn btn-primary" >Войти</button>
       </div>
+
+      <div>
+        {{form.value | json}}
+      </div>
+      <p>user@user.ru</p>
 
     </div>
+
   </form>
 </div>
