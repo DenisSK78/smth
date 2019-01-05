@@ -6,17 +6,20 @@ import { AppComponent } from './app.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { UnitsComponent } from './units/units.component';
 import { RegistrationComponent } from './registration/registration.component';
-import {AuthService} from './share/auth/auth.service';
-import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import { AuthService } from './share/auth/auth.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MainComponent } from './main/main.component';
+import { TokenInerceptorService} from './token-inerceptor.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticationComponent,
     UnitsComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    MainComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -27,11 +30,16 @@ import { ReactiveFormsModule } from '@angular/forms';
       {path: 'authentication', component: AuthenticationComponent},
       {path: 'units', component: UnitsComponent},
       {path: 'registration', component: RegistrationComponent},
+      {path: 'main', component: MainComponent},
       {path: '', redirectTo: 'authentication', pathMatch: 'full' }
     ])
   ],
   providers: [
-    AuthService
+    AuthService,
+    { provide: HTTP_INTERCEPTORS,
+      useClass: TokenInerceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

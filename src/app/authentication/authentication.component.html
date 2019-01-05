@@ -1,5 +1,5 @@
 <div class="container">
-  <form [formGroup]="form"  (submit)="onSubmit()">
+  <form [formGroup]="form" href="">
     <div class="form">
 
       <div class="row">
@@ -15,7 +15,8 @@
       </div>
 
       <div class="row">
-        <button type="submit" class="btn btn-primary" >Войти</button>
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Login</button>
+        <button type="button" class="btn btn-primary" (click)="toRegistration()">Registration</button>
       </div>
 
       <div>

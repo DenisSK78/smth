@@ -12,6 +12,8 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   authRequest(authentication: AuthModel): Observable <JwtModel> {
-    return this.http.post <JwtModel> ( `${environment.apiUrl}/auth`, authentication);
+    return this.http.post <JwtModel> ( `${environment.apiUrl}/auth`, authentication)
   }
+
+
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthService} from '../share/auth/auth.service';
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,
+              private authService: AuthService,
+              private fb: FormBuilder
+  ) { }
 
   ngOnInit() {
+    this.initForm();
   }
 
+  toLogin() {
+    this.router.navigateByUrl('authentication');
+  }
+
+  private initForm() {
+
+  }
 }

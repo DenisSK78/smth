@@ -1,3 +1,8 @@
 input.ng-touched.ng-invalid{
   border-color: red;
 }
+
+button {
+  width: 150px;
+  margin-right: 10px;
+}

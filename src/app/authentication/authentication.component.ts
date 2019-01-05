@@ -27,7 +27,10 @@ export class AuthenticationComponent implements OnInit {
     this.authService.authRequest( this.form.getRawValue())
       .subscribe(data => {
         this.jwtModel = data;
-        // console.log(this.jwtModel);
+        sessionStorage.setItem('token', this.jwtModel.token);
+        this.router.navigateByUrl('main');
+      }, err => {
+        console.log(err.toString() + 'Do something with error !');
       });
   }
 
@@ -60,5 +63,7 @@ export class AuthenticationComponent implements OnInit {
     return control.invalid && control.touched;
   }
 
-// localStorage.setItem('id_token', authResult.idToken);
+  toRegistration() {
+    this.router.navigateByUrl('/registration');
+  }
 }
