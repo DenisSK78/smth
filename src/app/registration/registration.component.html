@@ -1,33 +1,49 @@
-<div class="container">
-  <form>
-    <div class="form">
+<div class="row">
 
-      <div class="row">
-        <label>Name: </label>
-        <input type="text" class="form-control" id="name"/>
+  <div class="col-md-6 mx-auto">
+    <div class="card rounded-0">
+      <div class="card-header">
+        <h3>Registration</h3>
       </div>
+      <div class="card-body">
 
-      <div class="row">
-        <label>Email:</label>
-        <input type="text" class="form-control" id="email"/>
+    <form [formGroup]="form">
+      <div class="form">
+
+        <div class="row">
+          <label for="name">Name: </label>
+          <input formControlName="name" type="text" class="form-control" id="name" [formGroup]="form"/>
+          <div class="error" *ngIf="isControlInvalid('name')"></div>
+        </div>
+
+        <div class="row">
+          <label for="email">Email:</label>
+          <input formControlName="email" type="text" class="form-control" id="email" [formGroup]="form"/>
+          <div class="error" *ngIf="isControlInvalid('email')"></div>
+        </div>
+
+        <div class="row">
+          <label for="password">Password:</label>
+          <input formControlName="password" type="text" class="form-control" id="password" [formGroup]="form"/>
+          <div class="error" *ngIf="isControlInvalid('password')"></div>
+        </div>
+
+        <div class="row">
+          <label for="repeat">Repeat password:</label>
+          <input  formControlName="repeat" type="text" class="form-control" id="repeat" [formGroup]="form"/>
+          <div class="error" *ngIf="isControlInvalid('repeat')"></div>
+
+          <!--<div *ngIf="password.invalid && (password.dirty || password.touched)">Password confirm do not mach</div>-->
+        </div>
+
+        <div class="row but-row">
+          <button class="btn btn-primary" type="submit" (click)="onSubmit()">Registration</button>
+          <button class="btn btn-primary" type="button" (click)="toLogin()">Back</button>
+        </div>
+
+
       </div>
-
-      <div class="row">
-        <label>Password:</label>
-        <input type="text" class="form-control" id="password"/>
+    </form>
       </div>
-
-      <div class="row">
-        <label>Repeat password:</label>
-        <input type="text" class="form-control" id="repeat"/>
-      </div>
-
-      <div class="row">
-        <button class="btn btn-primary">Registration</button>
-        <button class="btn btn-primary" type="button" (click)="toLogin()">Back</button>
-      </div>
-
-
-    </div>
-  </form>
+  </div>
 </div>

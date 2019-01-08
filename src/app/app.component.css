@@ -5,16 +5,16 @@
   font-size: 1.2em;
 }
 
-nav a{
-  text-decoration: none;
-  transition: all 0.5s;
-  color: darksalmon;
-}
+/*nav a{*/
+  /*text-decoration: none;*/
+  /*transition: all 0.5s;*/
+  /*color: darksalmon;*/
+/*}*/
 
-nav a.active {
-  border-radius: 3px;
-  padding: 2px 8px;
-  background-color: coral;
-  color: white;
-}
+/*nav a.active {*/
+  /*border-radius: 3px;*/
+  /*padding: 2px 8px;*/
+  /*background-color: coral;*/
+  /*color: white;*/
+/*}*/
 

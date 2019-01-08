@@ -1,4 +1,13 @@
+input.ng-touched.ng-invalid{
+  border-color: palevioletred;
+}
+
+
 button {
-  width: 150px;
+  width: 120px;
   margin-right: 10px;
+}
+
+.but-row{
+  margin-top: 25px;
 }

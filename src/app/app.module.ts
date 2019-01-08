@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
 import { TokenInerceptorService} from './token-inerceptor.service';
+import { HeaderComponent } from './header/header.component';
+import {CompareValidatorDirective} from './share/directive/compare-validator.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TokenInerceptorService} from './token-inerceptor.service';
     AuthenticationComponent,
     UnitsComponent,
     RegistrationComponent,
-    MainComponent
+    MainComponent,
+    HeaderComponent,
+    CompareValidatorDirective
   ],
   imports: [
     ReactiveFormsModule,

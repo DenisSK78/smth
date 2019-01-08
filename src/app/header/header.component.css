@@ -1,0 +1,13 @@
+.my-reg-link{
+  margin-right: 3px;
+}
+
+.messages{
+  width: 100%;
+  height: 40px;
+  background-color: darkgray;
+}
+
+.msg-exc{
+  height: 20%;
+}
